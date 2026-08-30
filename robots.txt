@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://drmohibra.github.io/mohamed/sitemap.xml
