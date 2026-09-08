@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Outcome Ascertainment Bias in Clinical AI | Mohamed Khair Ibraheem</title>
+<link rel="canonical" href="https://mkibraheem.com/insights/outcome-ascertainment-bias-clinical-ai/">
+
+<meta name="description" content="Outcome ascertainment bias in clinical AI occurs when testing, surveillance, diagnosis, or documentation determines which outcomes become visible to a prediction model.">
+<meta name="author" content="Mohamed Khair Ibraheem, MD, MS">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#10263b">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mohamed Khair Ibraheem">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://mkibraheem.com/insights/outcome-ascertainment-bias-clinical-ai/">
+<meta property="og:title" content="Outcome Ascertainment Bias in Clinical AI: Why Prediction Models Learn Who Gets Tested">
+<meta property="og:description" content="A clinical perspective on selective testing, label bias, hidden outcomes, and why strong model discrimination does not guarantee valid clinical learning.">
+<meta property="og:image" content="https://mkibraheem.com/assets/mohamed-ibraheem-headshot.jpg">
+<meta property="og:image:alt" content="Mohamed Khair Ibraheem, MD, MS">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@Dr_Moh_Khair">
+<meta name="twitter:title" content="Outcome Ascertainment Bias in Clinical AI">
+<meta name="twitter:description" content="Why clinical prediction models may learn testing behavior, surveillance intensity, and documentation patterns instead of biology alone.">
+<meta name="twitter:image" content="https://mkibraheem.com/assets/mohamed-ibraheem-headshot.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://mkibraheem.com/insights/outcome-ascertainment-bias-clinical-ai/#article",
+      "url": "https://mkibraheem.com/insights/outcome-ascertainment-bias-clinical-ai/",
+      "headline": "Outcome Ascertainment Bias in Clinical AI: Why Prediction Models Learn Who Gets Tested",
+      "description": "A clinical perspective on selective testing, label bias, hidden outcomes, and the reliability of prediction models trained on selectively observed clinical outcomes.",
+      "datePublished": "2026-09-08",
+      "dateModified": "2026-09-08",
+      "inLanguage": "en",
+      "mainEntityOfPage": {
+        "@id": "https://mkibraheem.com/insights/outcome-ascertainment-bias-clinical-ai/"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://mkibraheem.com/assets/mohamed-ibraheem-headshot.jpg"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://mkibraheem.com/#person",
+        "name": "Mohamed Khair Ibraheem",
+        "honorificSuffix": ["MD", "MS"],
+        "url": "https://mkibraheem.com/",
+        "sameAs": [
+          "https://orcid.org/0009-0000-7516-2782",
+          "https://scholar.google.com/citations?user=BgaWUNQAAAAJ",
+          "https://www.semanticscholar.org/author/Mohamed-Ibraheem/2379433904",
+          "https://www.ncbi.nlm.nih.gov/myncbi/mohamed%20khair.ibraheem.1/bibliography/public/"
+        ]
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://mkibraheem.com/#website",
+        "name": "Mohamed Khair Ibraheem",
+        "url": "https://mkibraheem.com/"
+      },
+      "about": [
+        {"@type": "Thing", "name": "Clinical artificial intelligence"},
+        {"@type": "Thing", "name": "Outcome ascertainment"},
+        {"@type": "Thing", "name": "Label bias"},
+        {"@type": "Thing", "name": "Selective testing"},
+        {"@type": "Thing", "name": "Critical care"}
+      ],
+      "keywords": [
+        "outcome ascertainment bias",
+        "clinical AI",
+        "clinical machine learning",
+        "label bias",
+        "selective testing",
+        "critical care artificial intelligence",
+        "prediction models",
+        "healthcare artificial intelligence"
+      ],
+      "citation": [
+        "https://pubmed.ncbi.nlm.nih.gov/37152303/",
+        "https://www.nature.com/articles/s41746-024-01245-y",
+        "https://pubmed.ncbi.nlm.nih.gov/3574021/",
+        "https://academic.oup.com/biostatistics/article/21/2/345/5631850",
+        "https://pubmed.ncbi.nlm.nih.gov/31649194/",
+        "https://pubmed.ncbi.nlm.nih.gov/42480414/"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://mkibraheem.com/insights/outcome-ascertainment-bias-clinical-ai/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mkibraheem.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insights",
+          "item": "https://mkibraheem.com/insights/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Outcome Ascertainment Bias in Clinical AI",
+          "item": "https://mkibraheem.com/insights/outcome-ascertainment-bias-clinical-ai/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{--ink:#10263b;--muted:#647382;--line:#dde4e9;--soft:#f5f7f8;--gold:#9a773d;--paper:#fff;--max:920px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(calc(100% - 42px),var(--max));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,38,59,.08)}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{text-decoration:none;font-family:Georgia,serif;font-size:1rem}
+.brand span{display:block;font-family:Inter,sans-serif;color:var(--muted);font-size:.67rem;text-transform:uppercase;letter-spacing:.12em}
+.links{display:flex;gap:22px}
+.links a{text-decoration:none;color:var(--muted);font-size:.88rem;font-weight:700}
+.hero{padding:72px 0 48px;border-bottom:1px solid var(--line)}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;font-weight:800;color:var(--gold)}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500}
+h1{font-size:clamp(2.7rem,6vw,5.1rem);line-height:1.02;letter-spacing:-.045em;margin:16px 0 22px}
+.deck{font-family:Georgia,serif;font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.55;color:#34495a;max-width:850px}
+.meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px;color:var(--muted);font-size:.9rem}
+.article{padding:50px 0 78px}
+.answerbox{background:var(--soft);border-left:4px solid var(--gold);padding:24px 26px;margin:0 0 42px}
+.answerbox strong{display:block;font-family:Georgia,serif;font-size:1.28rem;margin-bottom:8px}
+.article h2{font-size:2.1rem;line-height:1.15;letter-spacing:-.025em;margin:48px 0 16px}
+.article h3{font-size:1.4rem;line-height:1.3;margin:32px 0 10px}
+.article p{font-size:1.06rem;margin:0 0 19px}
+.article ul{padding-left:24px}
+.article li{margin:10px 0}
+.callout{border:1px solid var(--line);padding:24px 26px;margin:34px 0;background:#fff}
+.callout strong{font-family:Georgia,serif;font-size:1.22rem}
+.authorbox{display:grid;grid-template-columns:92px 1fr;gap:20px;align-items:center;margin-top:58px;padding-top:30px;border-top:1px solid var(--line)}
+.authorbox img{width:92px;height:112px;object-fit:cover;object-position:center 22%;border:1px solid var(--line)}
+.authorbox h3{margin:0 0 4px}
+.authorbox p{font-size:.95rem;color:var(--muted);margin:0 0 7px}
+.references{margin-top:55px;padding-top:30px;border-top:1px solid var(--line)}
+.references ol{padding-left:22px}
+.references li{margin:13px 0;color:#334b5e}
+.references a{font-weight:650}
+.notice{font-size:.85rem;color:var(--muted);margin-top:34px}
+footer{border-top:1px solid var(--line);padding:32px 0 50px;color:var(--muted);font-size:.82rem}
+@media(max-width:720px){.links{display:none}.authorbox{grid-template-columns:1fr}.authorbox img{width:100px}.wrap{width:min(calc(100% - 28px),var(--max))}}
+</style>
+</head>
+
+<body>
+<header>
+<div class="wrap nav">
+<a class="brand" href="/">Mohamed Khair Ibraheem<span>MD, MS · Physician Scientist</span></a>
+<nav class="links" aria-label="Primary navigation">
+<a href="/about/">About</a>
+<a href="/research/">Research</a>
+<a href="/publications/">Publications</a>
+<a href="/">Home</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<div class="wrap">
+<div class="eyebrow">Clinical AI Insight</div>
+<h1>Outcome Ascertainment Bias in Clinical AI: Why Prediction Models Learn Who Gets Tested</h1>
+<p class="deck">A prediction model cannot learn a clinical outcome that the healthcare system never observes. When testing, surveillance, diagnosis, or documentation determines which outcomes become visible, the model may learn patterns of observation and care rather than biology alone.</p>
+<div class="meta">
+<span>By Mohamed Khair Ibraheem, MD, MS</span>
+<span>September 8, 2026</span>
+<span>Critical Care · Clinical AI · Prediction Models</span>
+</div>
+</div>
+</section>
+
+<article class="article">
+<div class="wrap">
+
+<div class="answerbox">
+<strong>What is outcome ascertainment bias in clinical AI?</strong>
+Outcome ascertainment bias occurs when the outcome used to train or evaluate a clinical prediction model is observed differently across patients because testing, surveillance, diagnosis, or documentation is selective. The recorded label can therefore reflect both the patient state and the healthcare process that determined whether that state became visible.
+</div>
+
+<p>Clinical machine learning usually begins with an apparently simple pair: predictors and an outcome. The predictors may include vital signs, laboratory values, medications, comorbidities, imaging, or physiologic signals. The outcome may be sepsis, acute kidney injury, infection, bleeding, thrombosis, organ failure, or another event that matters clinically.</p>
+
+<p>The difficulty is that many clinical outcomes are not passively waiting in the electronic health record. They become known only after somebody looks for them. A blood culture has to be ordered. A troponin has to be measured. Imaging has to be performed. A complication has to be recognized and documented. Follow up has to occur long enough for an event to be captured.</p>
+
+<p>This creates a fundamental problem for clinical AI. The model is trained on what was observed, but what was observed is partly determined by clinical suspicion, local workflow, resource availability, practice style, access to care, and prior decisions. In that setting, the label is not simply a biological truth. It is a biological truth filtered through a process of ascertainment.</p>
+
+<h2>Why selective testing changes the label</h2>
+
+<p>Suppose a model is developed to predict a condition that is confirmed only when a diagnostic test is performed. Patients with a positive test are labeled positive. Patients with a negative test are labeled negative. The difficult group is the patients who were never tested.</p>
+
+<p>A common analytic shortcut is to treat an untested patient as though the condition were absent. That choice may be convenient, but it creates a strong assumption: no test means no disease. In real clinical care, no test may instead mean that the clinician did not suspect the condition, the presentation was atypical, another diagnosis dominated attention, testing was unavailable, or the patient was discharged before the outcome became visible.</p>
+
+<p>Chang, Sjoding, and Wiens described this problem as disparate censorship and showed how differences in testing can create label bias when untested patients are effectively treated as negative. Their work demonstrates an important principle: when testing rates differ among patients with comparable underlying risk, the resulting labels can carry systematic error into model development.</p>
+
+<div class="callout">
+<strong>The central question is not only whether the recorded outcome is correct.</strong>
+<p style="margin-top:10px">It is whether every patient had a comparable opportunity for that outcome to be detected.</p>
+</div>
+
+<h2>Outcome ascertainment bias is not ordinary missing data</h2>
+
+<p>It is tempting to frame this as a missing data problem, but that is incomplete. Missingness usually focuses attention on absent variables. Outcome ascertainment concerns the mechanism that determines whether the target itself becomes known.</p>
+
+<p>The distinction matters because the observation process can be clinically informative. A clinician orders a test for a reason. Surveillance is intensified for a reason. Some patients receive more imaging, more laboratory testing, longer monitoring, or closer follow up because their perceived risk is higher. If the model uses labels created downstream of those decisions, it can inherit the decision process itself.</p>
+
+<p>This connects outcome ascertainment bias with older concepts such as verification bias and workup bias in diagnostic research. Decades before modern clinical AI, prediction researchers recognized that estimates could be distorted when the decision to apply a reference standard depended on the clinical findings being studied. Machine learning does not remove that problem. Large electronic health record datasets can scale it.</p>
+
+<h2>Why critical care is especially vulnerable</h2>
+
+<p>Critical care and acute illness are natural settings for this problem because observation is intense but uneven. Two patients with similar underlying disease may receive very different diagnostic trajectories depending on their initial presentation, location of care, clinician suspicion, hemodynamic stability, local protocols, and timing.</p>
+
+<p>Consider sepsis. A model may rely on outcomes defined by cultures, organ dysfunction measures, treatment patterns, or combinations of clinical observations. Yet culture collection is selective. Laboratory measurement frequency is selective. ICU transfer is selective. Antibiotic treatment is selective. Even the timing of documentation is influenced by workflow.</p>
+
+<p>The result is that a model can appear to learn sepsis risk while partly learning who is likely to trigger the clinical actions through which sepsis becomes observable.</p>
+
+<p>This is relevant to interpretability as well. In our 2026 systematic review and meta analysis of interpretable AI for sepsis and severe infection, the literature showed promising discrimination for sepsis detection but substantial methodological limitations. Fourteen of fifteen included studies were judged to have high overall risk of bias, emphasizing that understandable model outputs do not eliminate weaknesses in outcome definition, study design, validation, or clinical implementation.</p>
+
+<h2>A high AUC does not prove that the model learned the right phenomenon</h2>
+
+<p>Discrimination metrics answer an important but narrow question: can a model rank patients according to the recorded outcome? They do not prove that the recorded outcome is an unbiased representation of the clinical state we actually care about.</p>
+
+<p>A model can therefore perform well against an imperfect label. If testing behavior is stable within the development dataset, the model may accurately reproduce that behavior. Cross validation can reward it. Internal validation can confirm it. Feature importance methods can explain it. None of those steps guarantees that the target was ascertained equally across patients.</p>
+
+<p>This is one reason that label bias can be difficult to detect through routine performance measures. The GUIDE framework for predictive information in healthcare specifically highlights outcome ascertainment as a source of label bias when the observed outcome differs systematically from the ideal outcome that should guide clinical decision making.</p>
+
+<h2>Proxies can create the same problem in another form</h2>
+
+<p>Sometimes the problem is not whether an outcome was measured but whether the chosen label represents the desired clinical construct. A well known example comes from an algorithm that used healthcare cost as a proxy for healthcare need. Because spending was not equivalent to illness burden across patient groups, a seemingly reasonable target encoded a structural difference in care rather than the clinical need the system intended to identify.</p>
+
+<p>The lesson is broader than that single application. Clinical AI developers should ask whether the target is the clinical phenomenon itself, a proxy for that phenomenon, or a healthcare process correlated with it. Those are not interchangeable.</p>
+
+<h2>External validation helps, but it does not automatically solve ascertainment bias</h2>
+
+<p>External validation is essential for assessing generalizability, but an external dataset can reproduce the same observation mechanism. Two institutions may both test high risk patients more aggressively. Two databases may both define an outcome using the same ordered laboratory test. A model can therefore validate across datasets while the same underlying ascertainment process remains embedded in both.</p>
+
+<p>Changes in clinical policy can also produce dataset shift. If a health system changes when it orders cultures, imaging, biomarkers, or surveillance tests, the relationship between patient state and recorded label may change even when the biology does not. Work on dataset shift in health AI has emphasized that changes in measurement and clinical policy can degrade model reliability after deployment.</p>
+
+<h2>A practical framework for researchers</h2>
+
+<p>Outcome ascertainment should be treated as part of the data generating process, not merely as a limitation mentioned at the end of a manuscript. A practical evaluation can begin with seven questions.</p>
+
+<h3>1. Define the clinical outcome before defining the database label</h3>
+<p>State the biological or clinical event the model is intended to predict. Then describe exactly how the electronic record operationalizes that event. The gap between those two definitions is where ascertainment problems often begin.</p>
+
+<h3>2. Map the pathway through which the outcome becomes visible</h3>
+<p>Identify every decision required for detection. Does a clinician have to order a test? Does the patient need imaging? Is specialist review required? Is follow up necessary? Does documentation depend on billing or coding?</p>
+
+<h3>3. Quantify who gets tested</h3>
+<p>Testing frequency should be described across relevant clinical subgroups, care settings, severity levels, and time periods. Large differences do not automatically prove bias, but they reveal where unequal observation may exist.</p>
+
+<h3>4. Do not automatically equate unobserved with negative</h3>
+<p>Whenever possible, distinguish confirmed negative outcomes from outcomes that were never assessed. Sensitivity analyses can explore how different assumptions about the unobserved group change model performance.</p>
+
+<h3>5. Evaluate the testing process as well as the prediction process</h3>
+<p>If testing probability is strongly predictable from the same variables used by the outcome model, that is important information. It suggests that part of the apparent signal may be related to clinical suspicion or workflow.</p>
+
+<h3>6. Validate across different surveillance regimes</h3>
+<p>A useful external validation setting is not merely geographically different. It should also differ in practice patterns when possible. Robust performance across different testing policies provides stronger evidence that the model is learning more than one institution's observation process.</p>
+
+<h3>7. Report ascertainment explicitly</h3>
+<p>Readers should know how the outcome was detected, how many patients were never assessed for it, how observation varied across groups, and which assumptions converted clinical records into model labels.</p>
+
+<h2>Deployment can turn ascertainment bias into a feedback loop</h2>
+
+<p>The problem becomes more important once a model influences care. If a model trained on historical testing behavior predicts that certain patients are low risk, clinicians may test those patients less often. Fewer outcomes are then detected in that group. Those new data can later reinforce the original prediction pattern.</p>
+
+<p>This means the model is no longer simply describing a historical dataset. It is participating in the mechanism that generates future labels.</p>
+
+<p>For clinical AI governance, monitoring should therefore include more than discrimination and calibration. Health systems should watch whether deployment changes testing rates, surveillance intensity, treatment, escalation decisions, and the probability that outcomes are observed.</p>
+
+<h2>The broader principle</h2>
+
+<p>Clinical AI is often described as learning from real world data. That description is correct but incomplete. Real world clinical data are produced by a healthcare system. They reflect disease biology, but they also reflect suspicion, access, clinician behavior, resource allocation, policy, and documentation.</p>
+
+<p>For high consequence prediction models, especially in acute and critical illness, the reliability of the label deserves the same scrutiny as the architecture of the algorithm.</p>
+
+<div class="callout">
+<strong>A model cannot learn an outcome that the healthcare system never sees.</strong>
+<p style="margin-top:10px">Before asking whether a clinical AI model predicts well, we should ask how the outcome became observable, who had the opportunity to be diagnosed, and whether the label represents biology or the process of looking for it.</p>
+</div>
+
+<div class="authorbox">
+<img src="/assets/mohamed-ibraheem-headshot.jpg" alt="Mohamed Khair Ibraheem, MD, MS" loading="lazy">
+<div>
+<h3>Mohamed Khair Ibraheem, MD, MS</h3>
+<p>Physician scientist focused on critical care, clinical artificial intelligence, acute illness, sepsis, and transplantation.</p>
+<p><a href="/research/">Research program</a> · <a href="/publications/">Publications</a> · <a href="https://orcid.org/0009-0000-7516-2782" target="_blank" rel="me noopener noreferrer">ORCID</a></p>
+</div>
+</div>
+
+<section class="references" aria-labelledby="references-title">
+<h2 id="references-title">Selected references</h2>
+<ol>
+<li>Chang T, Sjoding MW, Wiens J. Disparate Censorship &amp; Undertesting: A Source of Label Bias in Clinical Machine Learning. Proceedings of Machine Learning Research. 2022. <a href="https://pubmed.ncbi.nlm.nih.gov/37152303/" target="_blank" rel="noopener noreferrer">PubMed</a></li>
+<li>GUIDE investigators. Guidance for unbiased predictive information for healthcare decision making and equity: considerations when race may be a prognostic factor. npj Digital Medicine. 2024. <a href="https://www.nature.com/articles/s41746-024-01245-y" target="_blank" rel="noopener noreferrer">Nature</a></li>
+<li>Panzer RJ, Suchman AL, Griner PF. Workup bias in prediction research. Medical Decision Making. 1987. <a href="https://pubmed.ncbi.nlm.nih.gov/3574021/" target="_blank" rel="noopener noreferrer">PubMed</a></li>
+<li>Subbaswamy A, Saria S. From development to deployment: dataset shift, causality, and shift stable models in health AI. Biostatistics. 2020. <a href="https://academic.oup.com/biostatistics/article/21/2/345/5631850" target="_blank" rel="noopener noreferrer">Oxford Academic</a></li>
+<li>Obermeyer Z, Powers B, Vogeli C, Mullainathan S. Dissecting racial bias in an algorithm used to manage the health of populations. Science. 2019. <a href="https://pubmed.ncbi.nlm.nih.gov/31649194/" target="_blank" rel="noopener noreferrer">PubMed</a></li>
+<li>Ibraheem M, Khalil M, Khalil S, Contreras H, Azar J. Early clinical decision support using interpretable artificial intelligence in acute illness (sepsis and infection): A systematic review and meta analysis. International Journal of Medical Informatics. 2026. <a href="https://pubmed.ncbi.nlm.nih.gov/42480414/" target="_blank" rel="noopener noreferrer">PubMed</a></li>
+</ol>
+</section>
+
+<p class="notice">This article is an independent academic perspective for educational and scholarly purposes. It is not a peer reviewed publication and does not provide individual medical advice.</p>
+
+</div>
+</article>
+</main>
+
+<footer>
+<div class="wrap">© 2026 Mohamed Khair Ibraheem, MD, MS. Independent professional academic website.</div>
+</footer>
+</body>
+</html>
